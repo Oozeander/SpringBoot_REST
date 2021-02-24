@@ -14,7 +14,7 @@ import java.time.Period;
 @Table(name = "student", schema = "public")
 public class Student implements Serializable {
     @Id
-    @SequenceGenerator(name = "student_seq_generator", schema = "default_schema", allocationSize = 1, initialValue = 1, sequenceName = "student_seq_generator")
+    @SequenceGenerator(name = "student_seq_generator", schema = "public", allocationSize = 1, initialValue = 1, sequenceName = "student_seq_generator")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_seq_generator")
     private Long id;
     @NotEmpty(message = "{student.name.notempty}")
